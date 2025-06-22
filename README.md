@@ -1,6 +1,21 @@
-# REALM AI-Powered Virtual Storytelling Platform
+<h1 align="center">REALM AI-Powered Virtual Storytelling Platform</h1>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/dc247cdd-8cc6-442a-8b45-8089fe70fd7b" alt="Logo" width="300"/>
+</p>
 
 > Create personalized stories from your own images, or see yourself as the hero in magical narratives — powered by LLMs, image generation, and face swapping!
+
+---
+### Before exploring the project, please check out the project demo. This will give you a better understanding of the experience.
+
+In the "Pick to Tale" section, I selected four different images and created an imaginary story around them.
+
+In the "Hero Time – Face Swapping" section, I used a Superman story and swapped the hero's face with Shah Rukh Khan's for a clearer and more engaging demonstration.
+
+Watch This Video on YouTube: 
+
+[![Image](https://github.com/user-attachments/assets/87e953b3-90b7-493e-9999-3c8294a37217)](https://youtu.be/t04_B9zvcF4)
 
 ---
 
@@ -31,91 +46,14 @@ The final story is generated with vivid illustrations and can be downloaded as a
 
 | Category         | Tech Used                                                                                |
 | ---------------- | ---------------------------------------------------------------------------------------- |
-| Frontend         | ReactJS + GSAP Animations                                                                |
+| Frontend         | ReactJS, Tailwind CSS + GSAP Animations                                                  |
 | Backend          | Flask (modular with controller/route logic)                                              |
-| Image Captioning | [BLIP model](https://huggingface.co/Salesforce/blip-image-captioning-base) or OpenRouter |
-| LLMs for Text    | [Gemini Pro API](https://aistudio.google.com/prompts/new_chat)                                                 |
+| Image Captioning | [BLIP model](https://huggingface.co/Salesforce/blip-image-captioning-base)               |
+| LLMs for Text    | [Gemini Pro API](https://aistudio.google.com/prompts/new_chat)                           |
 | Image Generation | [Together AI - FLUX.1](https://www.together.ai/)                                         |
 | Face Swapping    | [InsightFace + InSwapper](https://github.com/deepinsight/insightface)                    |
 | Image Hosting    | [ImgBB](https://imgbb.com/)                                                              |
 | PDF Generation   | FPDF / PIL                                                                               |
-
----
-
-## Project Structure
-
-```
-katakampranav-realm/
-    ├── client/
-    │   ├── README.md
-    │   ├── eslint.config.js
-    │   ├── index.html
-    │   ├── package-lock.json
-    │   ├── package.json
-    │   ├── postcss.config.js
-    │   ├── public - Shortcut.lnk
-    │   ├── tailwind.config.js
-    │   ├── vite.config.js
-    │   ├── .gitignore
-    │   ├── public/
-    │   │   ├── audio/
-    │   │   ├── fonts/
-    │   │   │   ├── circularweb-book.woff2
-    │   │   │   ├── general.woff2
-    │   │   │   ├── robert-medium.woff2
-    │   │   │   ├── robert-regular.woff2
-    │   │   │   └── zentry-regular.woff2
-    │   │   ├── img/
-    │   │   │   ├── bahubali.webp
-    │   │   │   ├── contact1.webp
-    │   │   │   ├── option-1.webp
-    │   │   │   ├── option-2.webp
-    │   │   │   ├── swordman-partial.webp
-    │   │   │   ├── swordman.webp
-    │   │   │   ├── test.webp
-    │   │   │   └── WEBSITE-LOGO.webp
-    │   │   └── videos/
-    │   └── src/
-    │       ├── App.jsx
-    │       ├── index.css
-    │       ├── main.jsx
-    │       ├── assets/
-    │       ├── components/
-    │       │   ├── About.jsx
-    │       │   ├── AnimatedTitle.jsx
-    │       │   ├── Button.jsx
-    │       │   ├── Contact.jsx
-    │       │   ├── CreateStory.jsx
-    │       │   ├── Features.jsx
-    │       │   ├── Hero.jsx
-    │       │   ├── Navbar.jsx
-    │       │   ├── Option1.jsx
-    │       │   ├── Option2.jsx
-    │       │   └── VideoPreview.jsx
-    │       └── pages/
-    │           ├── Choice1.jsx
-    │           ├── Choice1Story.jsx
-    │           ├── Choice2.jsx
-    │           └── Choice2Story.jsx
-    └── server/
-        ├── app.py
-        ├── config.py
-        ├── requirements.txt
-        ├── .gitignore
-        ├── controllers/
-        │   ├── face_swapping.py
-        │   ├── generate_image.py
-        │   ├── image_captioning.py
-        │   ├── prompt_builder.py
-        │   ├── scene_splitter.py
-        │   ├── story_generation.py
-        │   ├── text_extractor.py
-        │   └── top_characters_recognition.py
-        └── routes/
-            ├── character_route.py
-            ├── face_swapping_story_route.py
-            └── image_to_story_route.py
-```
 
 ---
 
@@ -145,14 +83,27 @@ katakampranav-realm/
 ### Clone the Repo
 
 ```bash
-git clone https://github.com/your-username/storytelling-platform.git
-cd storytelling-platform
+git clone https://github.com/katakampranav/REALM
+cd REALM
 ```
 
 ### Setup Backend
 
 #### Create a virtual environment(venv)
 
+For Windows: 
+```bash
+python -m venv venv
+venv/scripts/activate
+```
+
+For Mac:
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+then,
 ```bash
 pip install -r requirements.txt
 python app.py
@@ -173,6 +124,8 @@ GEMINI_API_KEY=your_gemini_key
 TOGETHER_AI_API_KEY=your_together_key
 IMGBB_API_KEY=your_imgbb_key
 ```
+
+### Add the inswapper_128.onnx file to controllers folder in the server
 
 ---
 
